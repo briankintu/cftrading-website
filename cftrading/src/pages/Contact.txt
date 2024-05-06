@@ -1,0 +1,34 @@
+import FooterSection from "../components/FooterSection"
+import BreadCumb from "../components/Main/Contact/BreadCumb"
+import ContactMain from "../components/Main/Contact/ContactMain"
+
+const Contact = () => {
+    return (
+        <>
+        <div className="inner-banner">
+        </div>
+        <BreadCumb />
+        <ContactMain />
+        <FooterSection />
+        </>
+    )
+}
+
+export default Contact
+
+
+
+
+
+
+<textarea
+                                     placeholder="Your Message*"
+                                     className="contact-input"
+                                     {...register("last_name", {
+                                         required: "Last Name is Required",
+                                         minLength: {
+                                             value: 2,
+                                             message: "Last Name Min length is 3 Characters",
+                                         },
+                                     })}
+                                ></textarea>

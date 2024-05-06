@@ -1,0 +1,87 @@
+import { TableContainer, Paper, TableHead, TableRow, TableCell, TableBody } from "@mui/material"
+import Alert from "@mui/material/Alert"
+import AlertTitle from "@mui/material/AlertTitle"
+import { useFrappeGetDocList } from "frappe-react-sdk"
+import { Table } from "react-bootstrap-icons"
+
+
+interface ContactFormFields {
+  first_name: string,
+  last_name: string,
+  email_id: string,
+
+}
+
+const ContactForm = () => {
+  const { data, isLoading, error } = useFrappeGetDocList<ContactFormFields>('Contact', {
+    fields: ['first_name', 'last_name', 'email_id']
+  })
+
+  console.log(data, isLoading, error)
+  return (
+    <div>ConcactForm
+      {isLoading && <h1>Loading...</h1>}
+      {error && <Alert severity='error'>
+        <AlertTitle>{error.exception}</AlertTitle>
+        {error.httpStatusText}
+      </Alert>}
+      {data && <TableContainer component={Paper}>
+        <Table >
+          <TableHead>
+            <TableRow>
+              <TableCell align="right">First Name</TableCell>
+              <TableCell align="right">Last Name</TableCell>
+              <TableCell align="right">Email</TableCell>
+            </TableRow>
+          </TableHead>
+          <TableBody>
+            {data.map((row: ContactFormFields) => (
+              <TableRow
+                key={row.first_name}
+                sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
+              >
+                <TableCell component="th" scope="row">
+                  {row.last_name}
+                </TableCell>
+                <TableCell align="right">{row.email_id}</TableCell>
+              </TableRow>
+            ))}
+          </TableBody>
+        </Table>
+      </TableContainer>
+      }
+    </div>
+
+
+
+  )
+}
+
+export default ContactForm
+
+
+
+import { useState } from 'react';
+
+function ContactSection() {
+  const [isLoading, setIsLoading] = useState(false);
+
+  const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    setIsLoading(true);
+
+    // Make API call or perform other async operation
+
+    setIsLoading(false);
+  };
+
+  return (
+    <form onSubmit={handleSubmit}>
+      <input type="text" name="name" />
+      <input type="email" name="email" />
+      <button type="submit" className="btn" disabled={isLoading}>
+        {isLoading ? 'Loading...' : 'Submit'}
+      </button>
+    </form>
+  );
+}

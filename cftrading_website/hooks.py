@@ -214,3 +214,5 @@ app_license = "MIT"
 # auth_hooks = [
 #	"cftrading_website.auth.validate"
 # ]
+
+website_route_rules = [{'from_route': '/cftrading/<path:app_path>', 'to_route': 'cftrading'},]

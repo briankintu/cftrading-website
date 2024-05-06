@@ -1,0 +1,14 @@
+{
+  "name": "cftrading_website",
+  "version": "1.0.0",
+  "description": "A website design in ReactJs with Frappe with a functional contact form",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "cd cftrading && yarn dev",
+    "build": "cd cftrading && yarn build"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}

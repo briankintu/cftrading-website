@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="keywords" content="Sectoral Responsive web template, Bootstrap Web Templates, Android Compatible web template, Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
+    <title>CF Trading | Home </title>
+    <link href="//fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <!-- Template CSS -->
+    <link rel="stylesheet" href="public/assets/css/style-starter.css">
+    
+  </head>
+  <body>
+    <div id="root"></div>
+		<script>window.csrf_token = '{{ frappe.session.csrf_token }}';</script>
+    <script type="module" src="/src/main.tsx"></script>
+    <script src="public/assets/js/bootstrap.min.js"></script>
+    <script src="public/assets/js/jquery.waypoints.min.js"></script>
+    <script src="public/assets/js/jquery.countup.js"></script>
+    <script src="public/assets/js/jquery-3.3.1.min.js"></script>
+    <script src="public/assets/js/theme-change.js"></script>
+    <script src="public/assets/js/owl.carousel.js"></script>
+    <script>
+      // When the user scrolls down 20px from the top of the document, show the button
+      window.onscroll = function() {
+          scrollFunction()
+      };
+
+      function scrollFunction() {
+          if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+              document.getElementById("movetop").style.display = "block";
+          } else {
+              document.getElementById("movetop").style.display = "none";
+          }
+      }
+
+      // When the user clicks on the button, scroll to the top of the document
+      function topFunction() {
+          document.body.scrollTop = 0;
+          document.documentElement.scrollTop = 0;
+      }
+  </script>
+    <script>
+      $(document).ready(function() {
+          $('.owl-one').owlCarousel({
+              loop: true,
+              margin: 0,
+              nav: true,
+              responsiveClass: true,
+              autoplay: true,
+              autoplayTimeout: 5000,
+              autoplaySpeed: 1000,
+              autoplayHoverPause: true,
+              responsive: {
+                  0: {
+                      items: 1
+                  },
+                  480: {
+                      items: 1
+                  },
+                  667: {
+                      items: 1
+                  },
+                  1000: {
+                      items: 1
+                  }
+              }
+          })
+      })
+  </script>
+  <script>
+    $(document).ready(function() {
+        $("#owl-demo2").owlCarousel({
+            loop: true,
+            nav: false,
+            margin: 50,
+            responsiveClass: true,
+            responsive: {
+                0: {
+                    items: 1,
+                    nav: false
+                },
+                736: {
+                    items: 1,
+                    nav: false
+                },
+                991: {
+                    items: 2,
+                    margin: 30,
+                    nav: false
+                },
+                1080: {
+                    items: 3,
+                    nav: false
+                }
+            }
+        })
+    })
+</script>
+<script>
+  $('.counter').countUp();
+</script>
+
+
+    
+
+  </body>
+</html>
